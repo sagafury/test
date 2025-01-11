@@ -2,16 +2,12 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 const cors = require("cors");
-import { Configuration, OpenAIApi } from "openai";
-require("dotenv").config();
+
 app.use(cors());
 let text_by_js = ""; // Variable to store the text sent by the frontend
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-});
 
-const openai = new OpenAIApi(configuration);
-// Middleware to parse JSON data
+
+
 app.use(express.json());
 
 // Endpoint to receive text from the frontend
